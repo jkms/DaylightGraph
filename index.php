@@ -64,21 +64,27 @@ $sunset = array( array( day => 1,
 
 
 
-function DrawLine($points, $color) {
+function DrawLine($points, $color, $graph) {
 	for ($i=0; $i<count($points); $i++) {
-		$coord['x'][] = ($graph['x'] / 2) + $points[$i]['day'];
-		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
+		$coord[]['x'] = ($graph['x'] / 2) + $points[$i]['day'];
+		$coord[]['y'] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
-	echo "\n		context.beginPath()
-		context.moveTo(".$coord['x'][0].", ".$coord['y'][0].");";
+	echo "
+    <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\"></canvas>
+		<script>
+		var canvas = document.getElementById('myCanvas');
+		var context = canvas.getContext('2d');
+		context.beginPath()
+		context.moveTo(".$coord[0]['x'].", ".$coord[0]['y'].");";
 	
 	for ($i=1; $i<count($points); $i++) {
-		echo "\n		context.lineTo(".$coord['x'][$i].", ".$coord['y'][$i].");";
+		echo "\n		context.lineTo(".$coord[$i]['x'].", ".$coord[$i]['y'].");";
 	}
 	echo "\n		context.lineJoin = 'round';
 		context.lineWidth = 2;
 		context.strokeStyle = '$color';
-		context.stroke();\n";
+		context.stroke();
+		</script>\n";
 } 
 
 echo "<!DOCTYPE HTML>
@@ -92,11 +98,7 @@ echo "<!DOCTYPE HTML>
 			}
 		</style>
 	</head>
-	<body>
-    <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\"></canvas>
-		<script>
-		var canvas = document.getElementById('myCanvas');
-		var context = canvas.getContext('2d');";
+	<body>";
 
 /*
 echo "\n		// round line join (middle)
@@ -109,17 +111,18 @@ echo "\n		// round line join (middle)
 */
 
 //DrawLine($sunrise, "red");
-DrawLine($sunrisearray, "blue");
+DrawLine($sunrisearray, "blue", $graph);
 	
-echo "\n		</script>
-	</body>
+echo "\n	</body>
 </html>";
 
+/*
 for ($i=0; $i<count($sunrisearray); $i++) {
 		$test['x'][] = ($graph['x'] / 2) + $sunrisearray[$i]['day'];
 		$test['y'][] = $graph['y'] - (($sunrisearray[$i]['seconds'] / $secondsinday) * $graph['y']);
 }
 print_r($test);
+*/
 
 print_r($coord);
 ?>
