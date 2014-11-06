@@ -12,9 +12,9 @@ $secondsinday = 24*60*60
 		$time = date("H:i,s", $dayofyear);
 		$seconds = strtotime("1970-01-01 $time UTC")/$secondsinday;
 		//echo $seconds;
-		$coords=array($i,$seconds);
+		$coords = array($i,$seconds);
 		array_push($sunrise,$coords);
-		echo "\n<br>";
+		//echo "\n<br>";
 	}
 
 	print_r($sunrise)
