@@ -30,7 +30,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 		$sunrisearray[]=$newdata;
 	}
 
-	print_r($sunrisearray);
+	//print_r($sunrisearray);
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
@@ -111,7 +111,7 @@ echo "\n		// round line join (middle)
 */
 
 //DrawLine($sunrise, "red");
-DrawGraph$sunrisearray, "blue", $graph);
+DrawGraph($sunrisearray, "blue", $graph);
 	
 echo "\n	</body>
 </html>";
@@ -123,6 +123,4 @@ for ($i=0; $i<count($sunrisearray); $i++) {
 }
 print_r($test);
 */
-
-print_r($coord);
 ?>
