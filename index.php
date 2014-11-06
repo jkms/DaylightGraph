@@ -22,11 +22,11 @@ function converttoseconds($timevar) {
 		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$SSdata =  array (
 			'day' => $i,
-			'seconds' => converttoseconds($sunset);
+			'seconds' => converttoseconds($sunset)
 		);
 		$SRdata =  array (
 			'day' => $i,
-			'seconds' => converttoseconds($sunrise);
+			'seconds' => converttoseconds($sunrise)
 		);
 		$sunrisearray[]=$SRdata;
 		$sunsetarray[]=SSdata;
