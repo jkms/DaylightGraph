@@ -33,8 +33,10 @@ $sunset = array( array( day => 1,
 function DrawLine($points, $color) {
 	echo "\n		context.beginPath()
 		context.moveTo(".$points[0]["x"].", ".$points[0]["y"].");";
-	echo "\n		context.lineTo(".$points[1]["x"].", ".$points[1]["y"].");";
-	echo "\n		context.lineTo(".$points[2]["x"].", ".$points[2]["y"].");";
+	
+	for ($i=1; $i<=count($points); $i++) {
+		echo "\n		context.lineTo(".$points[$i]["x"].", ".$points[$i]["y"].");";
+	}
 	echo "\n		context.lineJoin = 'round';
 		context.stroke();
 		context.lineWidth = 2;
@@ -71,8 +73,9 @@ echo "\n		// round line join (middle)
 
 DrawLine($sunrise, "red");
 DrawLine($sunset, "blue");
-		
+	
 echo "\n		</script>
+		<p>There are $ssresult items in sunset and $srresult in sunrise</p>
 	</body>
 </html>";      
 
