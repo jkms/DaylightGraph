@@ -6,8 +6,8 @@ $TZOffset=-8;
 
 $secondsinday = 24*60*60;
 	$graph =  array (
-		'x' => "1000",
-		'y' => "1000"
+		'x' => 1000,
+		'y' => 1000
 	);
 
 function converttoseconds($timevar) {
@@ -66,11 +66,11 @@ $sunset = array( array( day => 1,
 
 function DrawLine($points, $color) {
 	for ($i=0; $i<count($points); $i++) {
-		$xcoord[] = ($graph['x']/2) + $points[$i]['day'];
-		$ycoord[] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
+		$coord['x'][] = ($graph['x']/2) + $points[$i]['day'];
+		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 	echo "\n		context.beginPath()
-		context.moveTo(".$xcoord[0].", ".$ycoord[0].");";
+		context.moveTo(".$coord['x'][0].", ".$coord['y'][0].");";
 	
 	for ($i=1; $i<count($points); $i++) {
 		echo "\n		context.lineTo(".$xcoord[$i].", ".$ycoord[$i].");";
@@ -114,6 +114,5 @@ DrawLine($sunrisearray, "blue");
 echo "\n		</script>
 	</body>
 </html>";      
-print_r($xcoord);
-print_r($ycoord);
+print_r($coord);
 ?>
