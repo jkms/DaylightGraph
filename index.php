@@ -29,7 +29,7 @@ function converttoseconds($timevar) {
 			'seconds' => converttoseconds($sunrise)
 		);
 		$sunrisearray[]=$SRdata;
-		$sunsetarray[]=SSdata;
+		$sunsetarray[]=$SSdata;
 	}
 	//print_r($sunrisearray);
 
