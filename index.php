@@ -36,7 +36,7 @@ function DrawGraph($points, $color, $graph) {
 	$secondsinday = 24*60*60;
 	$width=count($points);
 	for ($i=0; $i<$width; $i++) {
-		$coord['x'][] = (($graph['x'] / 2) + $points[$i]['day']) * ($graph['x'] / $width);
+		$coord['x'][] = (($points[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
 		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 	echo "
