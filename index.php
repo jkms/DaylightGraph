@@ -30,12 +30,15 @@ $sunset = array( array( day => 1,
 
 
 
-function DrawLine($points) {
+function DrawLine($points, $color) {
 	echo "\n		context.beginPath()
 		context.moveTo(".$points[0]["x"].", ".$points[0]["y"].");";
 	echo "\n		context.lineTo(".$points[1]["x"].", ".$points[1]["y"].");";
 	echo "\n		context.lineTo(".$points[2]["x"].", ".$points[2]["y"].");";
 	echo "\n		context.lineJoin = 'round';
+		context.stroke();
+		context.lineWidth = 2;
+		context.strokeStyle = '$color';
 		context.stroke();";
 } 
 
@@ -66,13 +69,10 @@ echo "\n		// round line join (middle)
 		context.stroke();";
 */
 
-DrawLine($sunrise);
-DrawLine($sunset);
+DrawLine($sunrise, "red");
+DrawLine($sunset, "blue");
 		
-echo "\n		context.lineWidth = 2;
-		// context.strokeStyle = 'blue';
-		context.stroke();
-		</script>
+echo "\n		</script>
 	</body>
 </html>";      
 
