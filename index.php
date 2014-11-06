@@ -7,6 +7,7 @@ $TZOffset=-8;
 	for ($i=-183; $i<=183; $i++) {
 		$dayofyear = time() + ($i * 24 * 60 * 60);
 		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		echo "\n<br>"
 	}
 
 
