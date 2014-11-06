@@ -20,7 +20,7 @@ $sunset = array( array( day => 1,
                     ),
                array( day => 2, 
                       x => 127,
-                      y => 39,
+                      y => 39
                     ),
                array( day => 3, 
                       x => 400,
@@ -28,7 +28,7 @@ $sunset = array( array( day => 1,
                     ),
                array( day => 4, 
                       x => 189,
-                      y => 34 
+                      y => 34
                     ),
                array( day => 5, 
                       x => 245,
