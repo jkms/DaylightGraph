@@ -5,7 +5,9 @@ date_default_timezone_set("America/Vancouver");
 include 'sunrise.php';
 $time=time();
 print_r($time);
-$times = get_sun_times(49, -123.1, $time);
+$lat_deg = 49;
+$long_deg = -123.1;
+$times = get_sun_times($lat_deg, $lat_deg, $time);
 print_r($times);
 
 $sunrise = array( array( day => 1, 
