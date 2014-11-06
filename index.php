@@ -14,16 +14,16 @@ $sunrise = array( array( day => 1,
                     )
              );
 
-/*
+
 function DrawLine($points) {
 	echo " 		context.beginPath()
-		context.moveTo".($points[1]["x"].", ".$points[1]["y"].");";
-	echo "context.lineTo".($points[2]["x"].", ".$points[2]["y"].");";
-	echo "context.lineTo".($points[3]["x"].", ".$points[3]["y"].");";
+		context.moveTo(".$points[1]["x"].", ".$points[1]["y"].");";
+	echo "context.lineTo(".$points[2]["x"].", ".$points[2]["y"].");";
+	echo "context.lineTo(".$points[3]["x"].", ".$points[3]["y"].");";
 	echo "		context.lineJoin = 'round';
 		context.stroke();";
 } 
-*/
+
 
 echo "<!DOCTYPE HTML>
 <html>
