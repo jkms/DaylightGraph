@@ -9,7 +9,7 @@ $secondsinday = 24*60*60
 	for ($i=-183; $i<=182; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$time = date("H:i,s", $dayofyear)
+		$time = date("H:i,s", $dayofyear);
 		$seconds = strtotime("1970-01-01 $time UTC")/$secondsinday;
 		//echo $seconds;
 		$coords=array($i,$seconds);
