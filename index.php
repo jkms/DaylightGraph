@@ -34,12 +34,13 @@ function converttoseconds($timevar) {
 
 function DrawGraph($points, $color, $graph) {
 	$secondsinday = 24*60*60;
-	for ($i=0; $i<count($points); $i++) {
-		$coord['x'][] = ($graph['x'] / 2) + $points[$i]['day'];
+	$width=count($points);
+	for ($i=0; $i<$width; $i++) {
+		$coord['x'][] = (($graph['x'] / 2) + $points[$i]['day']) * ($graph['x'] / $width);
 		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 	echo "
-    <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\"></canvas>
+    <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\" style=\"border:1px solid #000000;\"></canvas>
 		<script>
 		var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');
