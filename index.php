@@ -33,6 +33,7 @@ function converttoseconds($timevar) {
 	//print_r($sunrisearray);
 
 function DrawGraph($points, $color, $graph) {
+	$secondsinday = 24*60*60;
 	for ($i=0; $i<count($points); $i++) {
 		$coord['x'][] = ($graph['x'] / 2) + $points[$i]['day'];
 		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
