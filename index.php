@@ -16,11 +16,11 @@ $sunrise = array( array( day => 1,
 
 
 function DrawLine($points) {
-	echo "/n	context.beginPath()
+	echo "\n	context.beginPath()
 		context.moveTo(".$points[0]["x"].", ".$points[0]["y"].");";
-	echo "/n	context.lineTo(".$points[1]["x"].", ".$points[1]["y"].");";
-	echo "/n	context.lineTo(".$points[2]["x"].", ".$points[2]["y"].");";
-	echo "/n	context.lineJoin = 'round';
+	echo "\n	context.lineTo(".$points[1]["x"].", ".$points[1]["y"].");";
+	echo "\n	context.lineTo(".$points[2]["x"].", ".$points[2]["y"].");";
+	echo "\n	context.lineJoin = 'round';
 		context.stroke();";
 } 
 
@@ -42,7 +42,7 @@ echo "<!DOCTYPE HTML>
 		var context = canvas.getContext('2d');";
 
 /*
-echo "/n		// round line join (middle)
+echo "\n		// round line join (middle)
 		context.beginPath();
 		context.moveTo(100, 100);
 		context.lineTo(100, 200);
@@ -53,7 +53,7 @@ echo "/n		// round line join (middle)
 
 DrawLine($sunrise);
 		
-echo "/n		context.lineWidth = 2;
+echo "\n		context.lineWidth = 2;
 		// context.strokeStyle = 'blue';
 		context.stroke();
 		</script>
