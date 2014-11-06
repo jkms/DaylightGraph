@@ -4,27 +4,20 @@ $Longitude=-123.1;
 $Zenith=90;
 $TZOffset=-8;
 
-	for ($i=-183; $i<=183; $i++) {
-		$dayofyear = time() + ($i * 24 * 60 * 60);
-		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+$secondsinday = 24*60*60
+
+	for ($i=-183; $i<=182; $i++) {
+		$dayofyear = time() + ($i * $secondsinday);
+		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		$time = date("H:i,s", $dayofyear)
+		$seconds = strtotime("1970-01-01 $time UTC")/$secondsinday;
+		//echo $seconds;
+		$coords=array($i,$seconds);
+		array_push($sunrise,$coords);
 		echo "\n<br>";
 	}
 
-
-
-$sunrise = array( array( day => 1, 
-                      x => 50,
-                      y => 50 
-                    ),
-               array( day => 2, 
-                      x => 75,
-                      y => 100,
-                    ),
-               array( day => 3, 
-                      x => 100,
-                      y => 150 
-                    )
-             );
+	print_r($sunrise)
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
@@ -98,7 +91,7 @@ echo "\n		// round line join (middle)
 		context.stroke();";
 */
 
-DrawLine($sunrise, "red");
+//DrawLine($sunrise, "red");
 DrawLine($sunset, "blue");
 	
 echo "\n		</script>
