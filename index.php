@@ -5,6 +5,10 @@ $Zenith=90;
 $TZOffset=-8;
 
 $secondsinday = 24*60*60;
+	$graph =  array (
+		'x' => "1000",
+		'y' => "1000"
+	);
 
 function converttoseconds($timevar) {
 $timearray = explode(':',$timevar);
@@ -61,11 +65,15 @@ $sunset = array( array( day => 1,
 
 
 function DrawLine($points, $color) {
+	for ($i=0; $i<count($points); $i++) {
+		$xcoord[$i] = ($graph["x"]/2) + $points[$i][day];
+		$ycoord[$i] = $graph["y"] - (($points[$i][seconds]/$secondsinday)*$graph["y"]);
+	}
 	echo "\n		context.beginPath()
-		context.moveTo(".$points[0]["x"].", ".$points[0]["y"].");";
+		context.moveTo(".$xcoord[$i].", ".$ycoord[$i].");";
 	
-	for ($i=1; $i<=count($points)-1; $i++) {
-		echo "\n		context.lineTo(".$points[$i]["x"].", ".$points[$i]["y"].");";
+	for ($i=1; $i<count($points)1; $i++) {
+		echo "\n		context.lineTo(".$xcoord[$i].", ".$ycoord[$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
 		context.lineWidth = 2;
@@ -85,7 +93,7 @@ echo "<!DOCTYPE HTML>
 		</style>
 	</head>
 	<body>
-    <canvas id=\"myCanvas\" width=\"578\" height=\"578\"></canvas>
+    <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\"></canvas>
 		<script>
 		var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');";
