@@ -73,7 +73,7 @@ function DrawLine($points, $color) {
 		context.moveTo(".$coord['x'][0].", ".$coord['y'][0].");";
 	
 	for ($i=1; $i<count($points); $i++) {
-		echo "\n		context.lineTo(".$xcoord[$i].", ".$ycoord[$i].");";
+		echo "\n		context.lineTo(".$coord['x'][$i].", ".$coord['y'][$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
 		context.lineWidth = 2;
