@@ -14,6 +14,7 @@ $sunrise = array( array( day => 1,
                     )
              );
 
+/*
 function DrawLine($points) {
 	echo " 		context.beginPath()
 		context.moveTo".($points[1]["x"].", ".$points[1]["y"].");";
@@ -22,6 +23,7 @@ function DrawLine($points) {
 	echo "		context.lineJoin = 'round';
 		context.stroke();";
 } 
+*/
 
 echo "<!DOCTYPE HTML>
 <html>
