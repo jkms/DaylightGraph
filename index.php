@@ -17,7 +17,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 
 	for ($i=-183; $i<=182; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
-		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$DayinQuestion = date('D, d M Y', $dayofyear);
 		$seconds = converttoseconds($sunrise);
@@ -114,5 +114,6 @@ DrawLine($sunrisearray, "blue");
 echo "\n		</script>
 	</body>
 </html>";      
-
+print_r{$xcoord);
+print_r{$ycoord);
 ?>
