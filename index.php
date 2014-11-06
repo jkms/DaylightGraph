@@ -2,8 +2,9 @@
 
 include 'sunrise.php';
 $time=time();
-$times = get_sun_times(49, -123.1, $time)
-print_r($times)
+$times = get_sun_times(49, -123.1, $time);
+print_r($times);
+
 $sunrise = array( array( day => 1, 
                       x => 50,
                       y => 50 
