@@ -1,7 +1,10 @@
 <?PHP
 
+date_default_timezone_set("America/Vancouver");
+
 include 'sunrise.php';
 $time=time();
+print_r($time);
 $times = get_sun_times(49, -123.1, $time);
 print_r($times);
 
