@@ -45,7 +45,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	//Grid
 //		for ($i=1; $i<12; $i++) {
 		echo "\n		context.beginPath();
-		context.moveTo(100, ".graph['y'].");
+		context.moveTo(100, 1000);
 		context.lineTo(100, 0);
 		context.lineWidth = 1;
 		context.strokeStyle = 'gray';
