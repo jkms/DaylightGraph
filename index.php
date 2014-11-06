@@ -66,8 +66,8 @@ $sunset = array( array( day => 1,
 
 function DrawLine($points, $color) {
 	for ($i=0; $i<count($points); $i++) {
-		$xcoord[$i] = ($graph["x"]/2) + $points[$i][day];
-		$ycoord[$i] = $graph["y"] - (($points[$i][seconds] / $secondsinday) * $graph["y"]);
+		$xcoord[$i] = ($graph['x']/2) + $points[$i]['day'];
+		$ycoord[$i] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 	echo "\n		context.beginPath()
 		context.moveTo(".$xcoord[0].", ".$ycoord[0].");";
