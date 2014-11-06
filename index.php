@@ -6,10 +6,8 @@ include 'sunrise.php';
 $time=time();
 print_r($time);
 $times = get_sun_times(49, -123.1, $time);
-print_r($times);
-$mySunrise = $times.sunrise["sunrise"];
-$mySunrise->setTimeZone(new DateTimeZone('America/Vancouver'));
-echo "testing testing one two three $mySunrise";
+$mydate = date("G-i-s", $time["sunrise"]);
+echo $mydate;
 
 $sunrise = array( array( day => 1, 
                       x => 50,
