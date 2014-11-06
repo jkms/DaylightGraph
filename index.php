@@ -1,5 +1,28 @@
 <?PHP
 
+$sunrise = array( array( day => 1, 
+                      x => 50,
+                      y => 50 
+                    ),
+               array( day => 2, 
+                      x => 75,
+                      y => 100,
+                    ),
+               array( day => 3, 
+                      x => 100,
+                      y => 150 
+                    )
+             );
+
+function DrawLine($points) {
+	echo " 		context.beginPath()
+		context.moveTo".($points[1]["x"].", ".$points[1]["y"].");";
+	echo "context.lineTo".($points[2]["x"].", ".$points[2]["y"].");";
+	echo "context.lineTo".($points[3]["x"].", ".$points[3]["y"].");";
+	echo "		context.lineJoin = 'round';
+		context.stroke();";
+} 
+
 echo "<!DOCTYPE HTML>
 <html>
 	<head>
@@ -24,6 +47,8 @@ echo "		// round line join (middle)
 		context.lineTo(200, 100);
 		context.lineJoin = 'round';
 		context.stroke();";
+
+DrawLine($sunrise);
 		
 echo "		context.lineWidth = 2;
 		// context.strokeStyle = 'blue';
