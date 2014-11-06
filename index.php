@@ -8,7 +8,7 @@ $secondsinday = 24*60*60;
 
 function converttoseconds($timevar) {
 $timearray = explode(':',$timevar);
-return $timearray[0]*60*24 + $timearray[1]*60;
+return $timearray[0]*60*60 + $timearray[1]*60;
 }
 
 	for ($i=-183; $i<=182; $i++) {
