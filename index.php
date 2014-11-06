@@ -67,12 +67,12 @@ $sunset = array( array( day => 1,
 function DrawLine($points, $color) {
 	for ($i=0; $i<count($points); $i++) {
 		$xcoord[$i] = ($graph["x"]/2) + $points[$i][day];
-		$ycoord[$i] = $graph["y"] - (($points[$i][seconds]/$secondsinday)*$graph["y"]);
+		$ycoord[$i] = $graph["y"] - (($points[$i][seconds] / $secondsinday) * $graph["y"]);
 	}
 	echo "\n		context.beginPath()
-		context.moveTo(".$xcoord[$i].", ".$ycoord[$i].");";
+		context.moveTo(".$xcoord[0].", ".$ycoord[0].");";
 	
-	for ($i=1; $i<count($points)1; $i++) {
+	for ($i=1; $i<count($points); $i++) {
 		echo "\n		context.lineTo(".$xcoord[$i].", ".$ycoord[$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
@@ -109,7 +109,7 @@ echo "\n		// round line join (middle)
 */
 
 //DrawLine($sunrise, "red");
-DrawLine($sunset, "blue");
+DrawLine($sunrisearray, "blue");
 	
 echo "\n		</script>
 	</body>
