@@ -6,8 +6,9 @@ include 'sunrise.php';
 $time=time();
 print_r($time);
 $times = get_sun_times(49, -123.1, $time);
-$mydate = date("G-i-s", $time["sunrise"]);
-echo "\n\n<br> My time of day is: $mydate, which is calculated from $time[\"sunrise\"]";
+$mydate = $time["sunrise"];
+$myformatteddate = date("G-i-s", $time["sunrise"]);
+echo "\n\n<br> My time of day is: $myformatteddate, which is calculated from $mydate";
 
 $sunrise = array( array( day => 1, 
                       x => 50,
