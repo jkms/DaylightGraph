@@ -5,14 +5,10 @@ $Zenith=90;
 $TZOffset=-8;
 
 $secondsinday = 24*60*60;
-	$graph =  array (
-		'x' => 1000,
-		'y' => 1000
-	);
 
 function converttoseconds($timevar) {
-$timearray = explode(':',$timevar);
-return $timearray[0]*60*60 + $timearray[1]*60;
+	$timearray = explode(':',$timevar);
+	return $timearray[0]*60*60 + $timearray[1]*60;
 }
 
 	for ($i=-183; $i<=182; $i++) {
@@ -31,38 +27,6 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 	}
 
 	//print_r($sunrisearray);
-			 
-$sunset = array( array( day => 1, 
-                      x => 84,
-                      y => 15 
-                    ),
-               array( day => 2, 
-                      x => 127,
-                      y => 39
-                    ),
-               array( day => 3, 
-                      x => 400,
-                      y => 354 
-                    ),
-               array( day => 4, 
-                      x => 189,
-                      y => 34
-                    ),
-               array( day => 5, 
-                      x => 245,
-                      y => 79 
-                    ),
-               array( day => 6, 
-                      x => 111,
-                      y => 222 
-                    ),
-               array( day => 7, 
-                      x => 8,
-                      y => 200 
-                    )
-             );
-
-
 
 function DrawGraph($points, $color, $graph) {
 	for ($i=0; $i<count($points); $i++) {
@@ -99,28 +63,10 @@ echo "<!DOCTYPE HTML>
 		</style>
 	</head>
 	<body>";
-
-/*
-echo "\n		// round line join (middle)
-		context.beginPath();
-		context.moveTo(100, 100);
-		context.lineTo(100, 200);
-		context.lineTo(200, 100);
-		context.lineJoin = 'round';
-		context.stroke();";
-*/
-
-//DrawLine($sunrise, "red");
-DrawGraph($sunrisearray, "blue", $graph);
 	
+	$graph =  array ('x' => 1000, 'y' => 1000);
+	DrawGraph($sunrisearray, "blue", $graph);
+
 echo "\n	</body>
 </html>";
-
-/*
-for ($i=0; $i<count($sunrisearray); $i++) {
-		$test['x'][] = ($graph['x'] / 2) + $sunrisearray[$i]['day'];
-		$test['y'][] = $graph['y'] - (($sunrisearray[$i]['seconds'] / $secondsinday) * $graph['y']);
-}
-print_r($test);
-*/
 ?>
