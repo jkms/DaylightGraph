@@ -1,4 +1,3 @@
-#!/usr/bin/php -f
 <?php
 //Stolen from https://github.com/jnewbigin/sunrise
 
@@ -401,7 +400,7 @@ function format_time($seconds)
  */
 
 date_default_timezone_set("Etc/UTC");
-date_default_timezone_set("Australia/Melbourne");
+date_default_timezone_set("America/Vancouver");
 
 /*
 $lat_deg = -31.557; // Deg north (-ve is south)
