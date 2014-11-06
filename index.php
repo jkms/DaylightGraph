@@ -95,9 +95,9 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	
 	//Line 4
 	$coord[3]['x'][0] = 0;
-	$coord[3]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
+	$coord[3]['y'][0] = ($line4 / $secondsinday) * $graph['y'];
 	$coord[3]['x'][1] = $graph['x'];
-	$coord[3]['y'][1] = ($line3 / $secondsinday) * $graph['y'];
+	$coord[3]['y'][1] = ($line4 / $secondsinday) * $graph['y'];
 	echo "\n		context.beginPath();
 		context.moveTo(".$coord[3]['x'][0].", ".$coord[3]['y'][0].");
 		context.lineTo(".$coord[3]['x'][1].", ".$coord[3]['y'][1].");
