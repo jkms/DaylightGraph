@@ -4,13 +4,13 @@ $Longitude=-123.1;
 $Zenith=90;
 $TZOffset=-8;
 
-$secondsinday = 24*60*60
+$secondsinday = 24*60*60;
 
 	for ($i=-183; $i<=182; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$time = date("H:i,s", $dayofyear);
-		$seconds = strtotime("1970-01-01 $time UTC");
+		$timeofday = date("H:i,s", $dayofyear);
+		$seconds = strtotime("1970-01-01 $timeofday UTC");
 		$sedondspercent = $seconds / $secondsinday;
 		echo "$seconds $sedondspercent \n";
 		$coords = array($i,$sedondspercent);
