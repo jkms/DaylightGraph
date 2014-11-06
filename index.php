@@ -54,10 +54,9 @@ function DrawLine($points, $color) {
 		echo "\n		context.lineTo(".$points[$i]["x"].", ".$points[$i]["y"].");";
 	}
 	echo "\n		context.lineJoin = 'round';
-		context.stroke();
 		context.lineWidth = 2;
 		context.strokeStyle = '$color';
-		context.stroke();";
+		context.stroke();\n";
 } 
 
 echo "<!DOCTYPE HTML>
