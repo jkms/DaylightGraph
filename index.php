@@ -6,15 +6,19 @@ $TZOffset=-8;
 
 $secondsinday = 24*60*60;
 
+function converttoseconds($timevar) {
+$timearray = explode(':',$timevar);
+return $timearray[0]*60*24 + $timearray[1]*60;
+}
+
 	for ($i=-183; $i<=182; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
 		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$timeofday = date('H:i:s', $sunrise);
 		$DayinQuestion = date('D, d M Y', $dayofyear);
-		$seconds = strtotime("1970-01-01 $timeofday UTC");
+		$seconds = converttoseconds($sunrise);
 		$sedondspercent = $seconds / $secondsinday;
-		echo "$DayinQuestion -- TimeofDay: $timeofday -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
+		echo "$DayinQuestion -- TimeofDay: $sunrise -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
 		$coords = array($i,$sedondspercent);
 		array_push($sunrise,$coords);
 	}
