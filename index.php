@@ -24,7 +24,6 @@ function DrawLine($points) {
 		context.stroke();";
 } 
 
-
 echo "<!DOCTYPE HTML>
 <html>
 	<head>
@@ -50,7 +49,7 @@ echo "		// round line join (middle)
 		context.lineJoin = 'round';
 		context.stroke();";
 
-# DrawLine($sunrise);
+DrawLine($sunrise);
 		
 echo "		context.lineWidth = 2;
 		// context.strokeStyle = 'blue';
