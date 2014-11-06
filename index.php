@@ -1,4 +1,8 @@
 <?PHP
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 $Latitude=49;
 $Longitude=-123.1;
 $Zenith=90;
