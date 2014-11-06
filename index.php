@@ -43,6 +43,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		var context = canvas.getContext('2d');";
 		
 	//Grid
+	/*
 	for ($i=1; $i<12; $i++) {
 		echo "\n		context.beginPath();
 		context.moveTo(".($i / 12) * graph['x'].", ".graph['y'] * 0 .");
@@ -60,7 +61,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.strokeStyle = 'gray';
 		context.stroke();";
 	}
-		
+	*/
 	$secondsinday = 24*60*60;
 	//Line 1
 	$width=count($line1);
@@ -70,7 +71,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	}
 
 	echo "
-		context.beginPath()
+		context.beginPath();
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
 	
 	for ($i=1; $i<count($line1); $i++) {
@@ -88,7 +89,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	}
 
 	echo "
-		context.beginPath()
+		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
 	
 	for ($i=1; $i<count($line2); $i++) {
