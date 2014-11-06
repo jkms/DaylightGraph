@@ -31,9 +31,11 @@ function converttoseconds($timevar) {
 		$sunrisearray[]=$SRdata;
 		$sunsetarray[]=$SSdata;
 	}
-	//print_r($sunrisearray);
+	
+	$startwork = converttoseconds("09:00");
+	$gohome = converttoseconds("17:30");
 
-function DrawGraph($line1, $color1, $line2, $color2, $graph) {
+function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
 	echo "
     <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\" style=\"border:1px solid #000000;\"></canvas>
 		<script>
@@ -42,7 +44,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $graph) {
 		
 
 	$secondsinday = 24*60*60;
-	
+	//Line 1
 	$width=count($line1);
 	for ($i=0; $i<$width; $i++) {
 		$coord[0]['x'][] = (($line1[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
@@ -60,7 +62,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $graph) {
 		context.lineWidth = 2;
 		context.strokeStyle = '$color1';
 		context.stroke();";
-		
+	//Line 32
 	$width=count($line2);
 	for ($i=0; $i<$width; $i++) {
 		$coord[1]['x'][] = (($line2[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
@@ -78,6 +80,31 @@ function DrawGraph($line1, $color1, $line2, $color2, $graph) {
 		context.lineWidth = 2;
 		context.strokeStyle = '$color2';
 		context.stroke();";
+	
+	//Line 3
+	$coord[2]['x'][0] = 0;
+	$coord[2]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
+	$coord[2]['x'][1] = $graph['x'];
+	$coord[2]['y'][1] = ($line3 / $secondsinday) * $graph['y'];
+	echo "\n		context.beginPath();
+		context.moveTo(".$coord[2]['x'][0].", ".$coord[2]['y'][0].");
+		context.lineTo(".$coord[2]['x'][1].", ".$coord[2]['y'][1].");
+		context.lineWidth = 1;
+		context.strokeStyle = '$color3';
+		context.stroke();";
+	
+	//Line 4
+	$coord[3]['x'][0] = 0;
+	$coord[3]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
+	$coord[3]['x'][1] = $graph['x'];
+	$coord[3]['y'][1] = ($line3 / $secondsinday) * $graph['y'];
+	echo "\n		context.beginPath();
+		context.moveTo(".$coord[3]['x'][0].", ".$coord[3]['y'][0].");
+		context.lineTo(".$coord[3]['x'][1].", ".$coord[3]['y'][1].");
+		context.lineWidth = 1;
+		context.strokeStyle = '$color4';
+		context.stroke();";
+	  
 		
 echo "		</script>\n";
 } 
@@ -96,7 +123,7 @@ echo "<!DOCTYPE HTML>
 	<body>";
 	
 	$graph =  array ('x' => 1000, 'y' => 1000);
-	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $graph);
+	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black"  $graph);
 
 echo "\n	</body>
 </html>";
