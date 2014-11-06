@@ -18,7 +18,7 @@ $secondsinday = 24*60*60
 		//echo "\n<br>";
 	}
 
-	print_r($sunrise)
+	print_r($sunrise);
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
