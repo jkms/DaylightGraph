@@ -66,7 +66,7 @@ $sunset = array( array( day => 1,
 
 function DrawLine($points, $color) {
 	for ($i=0; $i<count($points); $i++) {
-		$coord['x'][] = ($graph['x']/2) + $points[$i]['day'];
+		$coord['x'][] = ($graph['x'] / 2) + $points[$i]['day'];
 		$coord['y'][] = $graph['y'] - (($points[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 	echo "\n		context.beginPath()
@@ -113,6 +113,13 @@ DrawLine($sunrisearray, "blue");
 	
 echo "\n		</script>
 	</body>
-</html>";      
+</html>";
+
+for ($i=0; $i<count($sunrisearray); $i++) {
+		$test['x'][] = ($graph['x'] / 2) + $sunrisearray[$i]['day'];
+		$test['y'][] = $graph['y'] - (($sunrisearray[$i]['seconds'] / $secondsinday) * $graph['y']);
+}
+print_r($test);
+
 print_r($coord);
 ?>
