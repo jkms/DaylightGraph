@@ -1,6 +1,15 @@
 <?PHP
+$Latitude=49;
+$Longitude=-123.1;
+$Zenith=90;
+$TZOffset=-8;
 
-echo date("D M d Y"). ', sunrise time : ' .date_sunrise(time(), SUNFUNCS_RET_STRING, 49, -123.1, 90, -8);
+	for ($i=-183; $i<=183; $i++) {
+		$dayofyear = time() + ($i * 24 * 60 * 60);
+		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+	}
+
+
 
 $sunrise = array( array( day => 1, 
                       x => 50,
