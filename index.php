@@ -1,4 +1,6 @@
-<!DOCTYPE HTML>
+<?PHP
+
+echo "<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Daylight Graph</title>
@@ -10,22 +12,24 @@
 		</style>
 	</head>
 	<body>
-    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <canvas id=\"myCanvas\" width=\"578\" height=\"200\"></canvas>
 		<script>
 		var canvas = document.getElementById('myCanvas');
-		var context = canvas.getContext('2d');
+		var context = canvas.getContext('2d');";
 
-		// round line join (middle)
+echo "		// round line join (middle)
 		context.beginPath();
 		context.moveTo(100, 100);
 		context.lineTo(100, 200);
 		context.lineTo(200, 100);
 		context.lineJoin = 'round';
-		context.stroke();
+		context.stroke();";
 		
-		context.lineWidth = 2;
+echo "		context.lineWidth = 2;
 		// context.strokeStyle = 'blue';
 		context.stroke();
 		</script>
 	</body>
-</html>      
+</html>";      
+
+?>
