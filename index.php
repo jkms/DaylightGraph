@@ -123,7 +123,7 @@ echo "<!DOCTYPE HTML>
 	<body>";
 	
 	$graph =  array ('x' => 1000, 'y' => 1000);
-	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black"  $graph);
+	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 
 echo "\n	</body>
 </html>";
