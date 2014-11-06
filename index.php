@@ -22,7 +22,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 		$DayinQuestion = date('D, d M Y', $dayofyear);
 		$seconds = converttoseconds($sunrise);
 		$sedondspercent = $seconds / $secondsinday;
-		echo "$DayinQuestion -- TimeofDay: $sunrise -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
+		//echo "$DayinQuestion -- TimeofDay: $sunrise -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
 		$newdata =  array (
 			'day' => $i,
 			'seconds' => $seconds
@@ -30,7 +30,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 		$sunrisearray[]=$newdata;
 	}
 
-	print_r($sunrisearray);
+//	print_r($sunrisearray);
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
