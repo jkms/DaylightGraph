@@ -9,9 +9,9 @@ $lat_deg = 49;
 $long_deg = -123.1;
 $times = get_sun_times($lat_deg, $lat_deg, $time);
 print_r($times);
-$mySunrise = $times.sunrise["sunrise"]
+$mySunrise = $times.sunrise["sunrise"];
 $mySunrise->setTimeZone(new DateTimeZone('America/Vancouver'));
-echo "testing testing one two three $mySunrise"
+echo "testing testing one two three $mySunrise";
 
 $sunrise = array( array( day => 1, 
                       x => 50,
