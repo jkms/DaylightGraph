@@ -30,7 +30,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 		$sunrisearray[]=$newdata;
 	}
 
-//	print_r($sunrisearray);
+	print_r($sunrisearray);
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
