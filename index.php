@@ -71,7 +71,7 @@ echo "<!DOCTYPE HTML>
 		</style>
 	</head>
 	<body>
-    <canvas id=\"myCanvas\" width=\"578\" height=\"200\"></canvas>
+    <canvas id=\"myCanvas\" width=\"578\" height=\"578\"></canvas>
 		<script>
 		var canvas = document.getElementById('myCanvas');
 		var context = canvas.getContext('2d');";
