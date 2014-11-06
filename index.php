@@ -114,6 +114,6 @@ DrawLine($sunrisearray, "blue");
 echo "\n		</script>
 	</body>
 </html>";      
-print_r{$xcoord);
-print_r{$ycoord);
+print_r($xcoord);
+print_r($ycoord);
 ?>
