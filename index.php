@@ -10,7 +10,7 @@ $secondsinday = 24*60*60;
 		$dayofyear = time() + ($i * $secondsinday);
 		echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$timeofday = date('H:i:s', $dayofyear);
+		$timeofday = date('H:i:s', $sunrise);
 		$DayinQuestion = date('D, d M Y', $dayofyear);
 		$seconds = strtotime("1970-01-01 $timeofday UTC");
 		$sedondspercent = $seconds / $secondsinday;
