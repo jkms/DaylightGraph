@@ -1,14 +1,6 @@
 <?PHP
 
-date_default_timezone_set("America/Vancouver");
-
-include 'sunrise.php';
-$time=time();
-print_r($time);
-$times = get_sun_times(49, -123.1, $time);
-$mydate = $times["sunrise"];
-$myformatteddate = date("G-i-s", $mydate);
-echo "\n\n<br> My time of day is: $myformatteddate, which is calculated from $mydate";
+echo date("D M d Y"). ', sunrise time : ' .date_sunrise(time(), SUNFUNCS_RET_STRING, 49, -123.1, 90, -8);
 
 $sunrise = array( array( day => 1, 
                       x => 50,
