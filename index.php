@@ -20,10 +20,10 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 		$sedondspercent = $seconds / $secondsinday;
 		echo "$DayinQuestion -- TimeofDay: $sunrise -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
 		$coords = array($i,$sedondspercent);
-		array_push($sunrise,$coords);
+		array_push($sunrisearray,$coords);
 	}
 
-	print_r($sunrise);
+	print_r($sunrisearray);
 			 
 $sunset = array( array( day => 1, 
                       x => 84,
