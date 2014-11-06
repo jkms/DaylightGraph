@@ -7,7 +7,7 @@ $time=time();
 print_r($time);
 $times = get_sun_times(49, -123.1, $time);
 $mydate = date("G-i-s", $time["sunrise"]);
-echo $mydate;
+echo "\n\n<br> My time of day is: $mydate";
 
 $sunrise = array( array( day => 1, 
                       x => 50,
