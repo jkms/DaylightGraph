@@ -43,6 +43,14 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		var context = canvas.getContext('2d');";
 		
 	//Grid
+//		for ($i=1; $i<12; $i++) {
+		echo "\n		context.beginPath();
+		context.moveTo(100, ".graph['y'].");
+		context.lineTo(100, 0);
+		context.lineWidth = 1;
+		context.strokeStyle = 'gray';
+		context.stroke();";
+//	}
 	/*
 	for ($i=1; $i<12; $i++) {
 		echo "\n		context.beginPath();
