@@ -23,7 +23,7 @@ return $timearray[0]*60*60 + $timearray[1]*60;
 			'day' => $i,
 			'seconds' => $seconds
 		);
-		$sunrisearray[]=$newdata
+		$sunrisearray[]=$newdata;
 	}
 
 	print_r($sunrisearray);
