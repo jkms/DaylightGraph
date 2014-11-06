@@ -13,7 +13,7 @@ $secondsinday = 24*60*60;
 		$DayinQuestion = date('D, d M Y', $dayofyear);
 		$seconds = strtotime("1970-01-01 $timeofday UTC");
 		$sedondspercent = $seconds / $secondsinday;
-		echo "$DayinQuestion -- TimeofDay: $Time of Day -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
+		echo "$DayinQuestion -- TimeofDay: $TimeofDay -- Seconds: $seconds -- SecondsPercent: $sedondspercent<br>\n";
 		$coords = array($i,$sedondspercent);
 		array_push($sunrise,$coords);
 	}
