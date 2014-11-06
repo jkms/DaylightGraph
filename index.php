@@ -26,6 +26,22 @@ $sunset = array( array( day => 1,
                       x => 400,
                       y => 354 
                     )
+               array( day => 4, 
+                      x => 189,
+                      y => 34 
+                    )
+               array( day => 5, 
+                      x => 245,
+                      y => 79 
+                    )
+               array( day => 6, 
+                      x => 111,
+                      y => 222 
+                    )
+               array( day => 7, 
+                      x => 8,
+                      y => 200 
+                    )
              );
 
 
@@ -75,7 +91,6 @@ DrawLine($sunrise, "red");
 DrawLine($sunset, "blue");
 	
 echo "\n		</script>
-		<p>There are $ssresult items in sunset and $srresult in sunrise</p>
 	</body>
 </html>";      
 
