@@ -45,8 +45,8 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	//Grid
 	for ($i=1; $i<12; $i++) {
 		echo "\n		context.beginPath();
-		context.moveTo(".($i / 12) * graph['x'].", 0);
-		context.lineTo(".($i / 12) * graph['x'].", ".graph['y'].");
+		context.moveTo(".($i / 12) * graph['x'].", ".graph['y'] * 0 .");
+		context.lineTo(".($i / 12) * graph['x'].", ".graph['y'] * 1 .");
 		context.lineWidth = 1;
 		context.strokeStyle = 'gray';
 		context.stroke();";
@@ -54,8 +54,8 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	
 	for ($i=1; $i<24; $i++) {
 		echo "\n		context.beginPath();
-		context.moveTo(0, ".($i / 24) * graph['y'].");
-		context.lineTo(".graph['x'].", ".($i / 24) * graph['y'].");
+		context.moveTo(".graph['x'] * 0 .", ".($i / 24) * graph['y'].");
+		context.lineTo(".graph['x'] * 1 .", ".($i / 24) * graph['y'].");
 		context.lineWidth = 1;
 		context.strokeStyle = 'gray';
 		context.stroke();";
