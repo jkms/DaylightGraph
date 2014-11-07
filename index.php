@@ -22,8 +22,8 @@ $finish = 366 - date('z');
 	for ($i=$start; $i<=$finish; $i++) {
 		$dayofyear  = mktime(0, 0, 0, date("m")  , date("d")+$i, date("Y"));
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset, date('I', $dayofyear));
+		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset, date('I', $dayofyear));
 		
 		$SSdata =  array (
 			'day' => $i,
