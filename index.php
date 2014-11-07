@@ -86,7 +86,6 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.lineWidth = 1;
 			context.strokeStyle = 'green';
 			context.stroke();";
-		}
 
 	$secondsinday = 24*60*60;
 	//Line 1
