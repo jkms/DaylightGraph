@@ -81,8 +81,8 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		$coord[1002]['x'][1] = $graph['x'] / 2;
 		$coord[1002]['y'][1] = $graph['y'] * 1;
 		echo "\n		context.beginPath();
-			context.moveTo(".$coord[1002]['x'][0][$i].", ".$coord[1002]['y'][0][$i].");
-			context.lineTo(".$coord[1002]['x'][1][$i].", ".$coord[1002]['y'][1][$i].");
+			context.moveTo(".$coord[1002]['x'][0].", ".$coord[1002]['y'][0].");
+			context.lineTo(".$coord[1002]['x'][1].", ".$coord[1002]['y'][1].");
 			context.lineWidth = 1;
 			context.strokeStyle = 'green';
 			context.stroke();";
