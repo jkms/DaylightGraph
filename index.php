@@ -106,7 +106,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.lineWidth = 1;
 			context.strokeStyle = 'green';
 			context.stroke();";
-
+/*
 	//Line 1
 	$width=count($line1)-1;
 	for ($i=0; $i<$width; $i++) {
@@ -135,6 +135,8 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.fillStyle = '#8ED6FF';
 		context.strokeStyle = '$color1';
 		context.stroke();";
+*/
+		
 	//Line 2
 
 	$width=count($line2)-1;
