@@ -126,26 +126,28 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.lineWidth = 2;
 		context.strokeStyle = '$color1';
 		context.stroke();";
-	//Line 32
+	//Line 2
 
-	$width=count($line2);
+	$width=count($line2)-1;
 	for ($i=0; $i<$width; $i++) {
 		$coord[1]['x'][] = ($i * ($graph['x'] / $width));
 		$coord[1]['y'][] = ($line2[$i]['seconds'] / $secondsinday) * $graph['y'];
 	}
+	$coord[1]['x'][] = $graph['x'];
+	$coord[1]['y'][] = ($line2[$width]['seconds'] / $secondsinday) * $graph['y'];
 
 	echo "
 		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
 
-	for ($i=1; $i<$width; $i++) {
+	for ($i=1; $i<=$width; $i++) {
 		echo "\n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
 		context.lineWidth = 2;
 		context.strokeStyle = '$color2';
 		context.stroke();";
-	
+
 	//Line 3
 	$coord[2]['x'][0] = 0;
 	$coord[2]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
