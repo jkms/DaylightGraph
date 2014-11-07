@@ -83,6 +83,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'gray';
 			context.stroke();
 			context.font = '8pt Calibri';
+			context.textBaseline = 'middle';
 			context.fillText('$timetext', ".$coord[1001]['x'][0][$i].", ".$coord[1001]['y'][0][$i].");";
 		}
 
