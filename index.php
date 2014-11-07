@@ -144,28 +144,26 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.strokeStyle = '$color2';
 		context.stroke();";
 
-	//Line 3
+	//Work block
 	$coord[2]['x'][0] = 0;
 	$coord[2]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
 	$coord[2]['x'][1] = $graph['x'];
 	$coord[2]['y'][1] = ($line3 / $secondsinday) * $graph['y'];
-	echo "\n		context.beginPath();
-		context.moveTo(".$coord[2]['x'][0].", ".$coord[2]['y'][0].");
-		context.lineTo(".$coord[2]['x'][1].", ".$coord[2]['y'][1].");
-		context.lineWidth = 1;
-		context.strokeStyle = '$color3';
-		context.stroke();";
-	
-	//Line 4
 	$coord[3]['x'][0] = 0;
 	$coord[3]['y'][0] = ($line4 / $secondsinday) * $graph['y'];
 	$coord[3]['x'][1] = $graph['x'];
 	$coord[3]['y'][1] = ($line4 / $secondsinday) * $graph['y'];
 	echo "\n		context.beginPath();
+		context.moveTo(".$coord[2]['x'][0].", ".$coord[2]['y'][0].");
+		context.lineTo(".$coord[2]['x'][1].", ".$coord[2]['y'][1].");
 		context.moveTo(".$coord[3]['x'][0].", ".$coord[3]['y'][0].");
 		context.lineTo(".$coord[3]['x'][1].", ".$coord[3]['y'][1].");
+		context.closePath();
+		context.globalAlpha = 0.5;
 		context.lineWidth = 1;
-		context.strokeStyle = '$color4';
+		context.fillStyle = '$color3';
+		context.fill();
+		context.strokeStyle = '$color3';
 		context.stroke();";
 		
 		//Stupid shit for mark
