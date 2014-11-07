@@ -78,7 +78,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	$secondsinday = 24*60*60;
 	//Line 1
 	$width=count($line1);
-	for ($i=0; $i<=$width; $i++) {
+	for ($i=0; $i<$width; $i++) {
 		$coord[0]['x'][] = (($line1[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
 		$coord[0]['y'][] = $graph['y'] - (($line1[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
@@ -87,7 +87,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.beginPath();
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
 	
-	for ($i=1; $i<=$width; $i++) {
+	for ($i=1; $i<$width; $i++) {
 		echo "\n		context.lineTo(".$coord[0]['x'][$i].", ".$coord[0]['y'][$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
@@ -97,7 +97,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	//Line 32
 	
 	$width=count($line2);
-	for ($i=0; $i<=$width; $i++) {
+	for ($i=0; $i<$width; $i++) {
 		$coord[1]['x'][] = (($line2[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
 		$coord[1]['y'][] = $graph['y'] - (($line2[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
@@ -106,7 +106,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
 	
-	for ($i=1; $i<=$width; $i++) {
+	for ($i=1; $i<$width; $i++) {
 		echo "\n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
