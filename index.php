@@ -45,12 +45,14 @@ $finish = 366 - date('z');
 	
 	if (isset($_POST['work_time'])){
 		$startwork = converttoseconds($_POST['work_time']);
+		$startworkformvalue = $_POST['work_time'];
 	} else {
 		$startwork = converttoseconds('09:00');
 		$startworkformvalue = '09:00';
 	}
 	if (isset( $_POST['home_time'] )) {
 		$gohome = converttoseconds($_POST['home_time']);
+		$startworkformvalue = $_POST['home_time']
 	} else {
 		$gohome = converttoseconds('17:30');
 		$gohomeformvalue = '17:30';
