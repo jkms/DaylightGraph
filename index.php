@@ -17,7 +17,7 @@ function converttoseconds($timevar) {
 	return $timearray[0]*60*60 + $timearray[1]*60;
 }
 $start = date('z') * -1;
-$finish = 365 - date('z');
+$finish = 365 - date('z')+1;
 
 	for ($i=$start; $i<=$finish; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
