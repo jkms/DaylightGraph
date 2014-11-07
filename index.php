@@ -8,7 +8,7 @@ date_default_timezone_set('America/Vancouver');
 $Latitude=49;
 $Longitude=-123.1;
 $Zenith=90;
-$TZOffset=-8;
+
 
 $secondsinday = 24*60*60;
 
@@ -22,8 +22,9 @@ $finish = 366 - date('z');
 	for ($i=$start; $i<=$finish; $i++) {
 		$dayofyear  = mktime(0, 0, 0, date("m")  , date("d")+$i, date("Y"));
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
-		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset, date('I', $dayofyear));
-		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset, date('I', $dayofyear));
+		$TZOffset=-8+date('I', $dayofyear);
+		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		
 		$SSdata =  array (
 			'day' => $i,
