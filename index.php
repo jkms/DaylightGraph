@@ -1,4 +1,8 @@
 <?PHP
+$loadtime = microtime();
+$loadtime = explode(' ', $loadtime);
+$loadtime = $loadtime[1] + $loadtime[0];
+$starttime = $loadtime;
 
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
@@ -237,4 +241,11 @@ echo "<!DOCTYPE HTML>
 	
 echo "\n	</body>
 </html>";
+
+$loadtime = microtime();
+$loadtime = explode(' ', $loadtime);
+$loadtime = $loadtime[1] + $loadtime[0];
+$finishtime = $loadtime;
+$total_time = round(($finishtime - $starttime), 4);
+echo 'Page generated in '.$total_time.' seconds.';
 ?>
