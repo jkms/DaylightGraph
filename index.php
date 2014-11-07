@@ -133,7 +133,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.globalAlpha = 0.5;
 		context.lineJoin = 'round';
 		context.lineWidth = 2;
-		context.fillStyle = '#8ED6FF';
+		context.fillStyle = '$color1';
 		context.fill();
 		context.strokeStyle = '$color1';
 		context.stroke();";
@@ -147,15 +147,25 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	}
 	$coord[1]['x'][] = $graph['x'];
 	$coord[1]['y'][] = ($line2[$width]['seconds'] / $secondsinday) * $graph['y'];
+	    $coord[1]['x'][] = $graph['x'];
+        $coord[1]['y'][] = $graph['y'];
+        $coord[1]['x'][] = 0;
+        $coord[1]['y'][] = $graph['y'];
+        $coord[1]['x'][] = $coord[1]['x'][0];
+        $coord[1]['y'][] = $coord[1]['y'][0];
 
 	echo "\n		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
-
+	$width += 3;
 	for ($i=1; $i<=$width; $i++) {
 		echo "\n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
 	}
-	echo "\n		context.lineJoin = 'round';
+	echo "\n		context.closePath();
+		context.globalAlpha = 0.5;
+		context.lineJoin = 'round';
 		context.lineWidth = 2;
+		context.fillStyle = '$color2';
+		context.fill();
 		context.strokeStyle = '$color2';
 		context.stroke();";
 
