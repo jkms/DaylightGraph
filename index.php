@@ -76,7 +76,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		echo "			context.font = '8pt Calibri';
 			context.textAlign = 'center';
 			context.textBaseline = 'top';
-			context.fillText('$datetext', ".$coord[1000]['z'][0][12].", 0);";
+			context.fillText('$datetext', ".$coord[1000]['z'][0][11].", 0);";
 		
 		//Horizontal
 		for ($i=1; $i<24; $i++) {
