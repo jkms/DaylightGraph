@@ -46,12 +46,14 @@ $finish = 366 - date('z');
 	if (isset($_POST['work_time'])){
 		$startwork = converttoseconds($_POST['work_time']);
 	} else {
-		$startwork = converttoseconds('9:00');
+		$startwork = converttoseconds('09:00');
+		$startworkformvalue = '09:00';
 	}
 	if (isset( $_POST['home_time'] )) {
 		$gohome = converttoseconds($_POST['home_time']);
 	} else {
 		$gohome = converttoseconds('17:30');
+		$gohomeformvalue = '17:30';
 	}
 
 function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
@@ -250,9 +252,9 @@ echo "<!DOCTYPE HTML>
 echo "\n
 <form action=\"index.php\" method=\"post\">
 	When do you go to work:
-	<input type=\"time\" name=\"work_time\" value=\"$startwork\">
+	<input type=\"time\" name=\"work_time\" value=\"$startworkformvalue\">
 	When do you go home:
-	<input type=\"time\" name=\"home_time\" value=\"$gohome\">
+	<input type=\"time\" name=\"home_time\" value=\"$gohomeformvalue\">
 	<input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Submit\">
 </form>
 	</body>
