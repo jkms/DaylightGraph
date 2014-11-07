@@ -81,31 +81,6 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'gray';
 			context.stroke();";
 		}
-		
-		//Stupid shit for mark
-		$coord[1002]['x'][0] = $graph['x'] * (date('z') / 365);
-		$coord[1002]['y'][0] = $graph['y'] * 0;
-		$coord[1002]['x'][1] = $graph['x'] * (date('z') / 365);
-		$coord[1002]['y'][1] = $graph['y'] * 1;
-		echo "\n		context.beginPath();
-			context.moveTo(".$coord[1002]['x'][0].", ".$coord[1002]['y'][0].");
-			context.lineTo(".$coord[1002]['x'][1].", ".$coord[1002]['y'][1].");
-			context.lineWidth = 1;
-			context.strokeStyle = 'green';
-			context.stroke();";
-
-		$secondstoday = date("H:i");
-		$nowbar = converttoseconds($secondstoday);
-		$coord[1003]['x'][0] = $graph['x'] * 0;
-		$coord[1003]['y'][0] = $graph['y'] * $nowbar / $secondsinday;
-		$coord[1003]['x'][1] = $graph['x'] * 1;
-		$coord[1003]['y'][1] = $graph['y'] * $nowbar / $secondsinday;
-		echo "\n		context.beginPath();
-			context.moveTo(".$coord[1003]['x'][0].", ".$coord[1003]['y'][0].");
-			context.lineTo(".$coord[1003]['x'][1].", ".$coord[1003]['y'][1].");
-			context.lineWidth = 1;
-			context.strokeStyle = 'green';
-			context.stroke();";
 
 	//Line 1
 	$width=count($line1)-1;
@@ -192,6 +167,31 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.lineWidth = 1;
 		context.strokeStyle = '$color4';
 		context.stroke();";
+		
+		//Stupid shit for mark
+		$coord[1002]['x'][0] = $graph['x'] * (date('z') / 365);
+		$coord[1002]['y'][0] = $graph['y'] * 0;
+		$coord[1002]['x'][1] = $graph['x'] * (date('z') / 365);
+		$coord[1002]['y'][1] = $graph['y'] * 1;
+		echo "\n		context.beginPath();
+			context.moveTo(".$coord[1002]['x'][0].", ".$coord[1002]['y'][0].");
+			context.lineTo(".$coord[1002]['x'][1].", ".$coord[1002]['y'][1].");
+			context.lineWidth = 2;
+			context.strokeStyle = 'green';
+			context.stroke();";
+
+		$secondstoday = date("H:i");
+		$nowbar = converttoseconds($secondstoday);
+		$coord[1003]['x'][0] = $graph['x'] * 0;
+		$coord[1003]['y'][0] = $graph['y'] * $nowbar / $secondsinday;
+		$coord[1003]['x'][1] = $graph['x'] * 1;
+		$coord[1003]['y'][1] = $graph['y'] * $nowbar / $secondsinday;
+		echo "\n		context.beginPath();
+			context.moveTo(".$coord[1003]['x'][0].", ".$coord[1003]['y'][0].");
+			context.lineTo(".$coord[1003]['x'][1].", ".$coord[1003]['y'][1].");
+			context.lineWidth = 2;
+			context.strokeStyle = 'green';
+			context.stroke();";
 	  
 		
 echo "		</script>\n";
