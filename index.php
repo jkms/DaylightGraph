@@ -75,12 +75,15 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			$coord[1001]['y'][1][] = ($i/24) * $graph['y'];
 		}
 		for ($i=0; $i<23; $i++) {
+			$timetext = date('H:i', mktime ($i));
 			echo "\n		context.beginPath();
 			context.moveTo(".$coord[1001]['x'][0][$i].", ".$coord[1001]['y'][0][$i].");
 			context.lineTo(".$coord[1001]['x'][1][$i].", ".$coord[1001]['y'][1][$i].");
 			context.lineWidth = 1;
 			context.strokeStyle = 'gray';
-			context.stroke();";
+			context.stroke();
+			context.font = '8pt Calibri';
+			context.fillText('$timetext', ".$coord[1001]['x'][0][$i].", ".$coord[1001]['y'][0][$i].");";
 		}
 
 	//Line 1
