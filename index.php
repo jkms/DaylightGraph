@@ -127,7 +127,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
 	$width += 3;
 	for ($i=1; $i<=$width; $i++) {
-		echo "/n		context.lineTo(".$coord[0]['x'][$i].", ".$coord[0]['y'][$i].");";
+		echo "\n		context.lineTo(".$coord[0]['x'][$i].", ".$coord[0]['y'][$i].");";
 	}
 	echo "\n		context.closepath();
 //		context.lineJoin = 'round';
@@ -145,11 +145,11 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	$coord[1]['x'][] = $graph['x'];
 	$coord[1]['y'][] = ($line2[$width]['seconds'] / $secondsinday) * $graph['y'];
 
-	echo "/n		context.beginPath();
+	echo "\n		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
 
 	for ($i=1; $i<=$width; $i++) {
-		echo "/n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
+		echo "\n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
 	}
 	echo "\n		context.lineJoin = 'round';
 		context.lineWidth = 2;
