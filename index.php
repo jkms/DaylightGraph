@@ -156,8 +156,9 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	echo "\n		context.beginPath();
 		context.moveTo(".$coord[2]['x'][0].", ".$coord[2]['y'][0].");
 		context.lineTo(".$coord[2]['x'][1].", ".$coord[2]['y'][1].");
-		context.moveTo(".$coord[3]['x'][0].", ".$coord[3]['y'][0].");
 		context.lineTo(".$coord[3]['x'][1].", ".$coord[3]['y'][1].");
+		context.lineTo(".$coord[3]['x'][0].", ".$coord[3]['y'][0].");
+
 		context.closePath();
 		context.globalAlpha = 0.5;
 		context.lineWidth = 1;
