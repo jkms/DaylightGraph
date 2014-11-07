@@ -59,12 +59,16 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			$coord[1000]['y'][1][] = $graph['x'] * 1;
 		}
 		for ($i=0; $i<11; $i++) {
+			$timetext = date('M', mktime ($i+1,0,0,$i));
 			echo "\n		context.beginPath();
 			context.moveTo(".$coord[1000]['x'][0][$i].", ".$coord[1000]['y'][0][$i].");
 			context.lineTo(".$coord[1000]['x'][1][$i].", ".$coord[1000]['y'][1][$i].");
 			context.lineWidth = 1;
 			context.strokeStyle = 'gray';
-			context.stroke();";
+			context.stroke();
+			context.font = '8pt Calibri';
+			context.textBaseline = 'middle';
+			context.fillText('$timetext', ".$coord[1001]['x'][1][$i].", ".$coord[1001]['y'][1][$i].");";
 		}
 		
 		//Horizontal
