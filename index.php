@@ -24,6 +24,7 @@ $finish = 365 - date('z');
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunset = date_sunset($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
+		echo "Day: ".$i." Sunrise: ".$sunrise." Sunset: ".$sunset;		
 		$SSdata =  array (
 			'day' => $i,
 			'seconds' => converttoseconds($sunset)
@@ -186,11 +187,6 @@ echo "<!DOCTYPE HTML>
 	
 	$graph =  array ('x' => 1000, 'y' => 700);
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
-
-	echo "<h1>SunRise</h1>\n";
-	print_r($sunrisearray);
-	echo "<h1>SunSet</h1>\n";
-	print_r($sunsetarray);
 	
 echo "\n	</body>
 </html>";
