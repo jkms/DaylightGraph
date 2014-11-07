@@ -248,12 +248,13 @@ echo "<!DOCTYPE HTML>
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 	
 echo "\n
-
+<form>
 	When do you go to work:
 	<input type=\"time\" name=\"work_time\" value=\"09:00\">
 	When do you go home:
 	<input type=\"time\" name=\"home_time\" value=\"17:30\">
 	<input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Submit\">
+</form>
 	</body>
 </html>";
 
