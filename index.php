@@ -184,7 +184,7 @@ echo "<!DOCTYPE HTML>
 	</head>
 	<body>";
 	
-	$graph =  array ('x' => 1000, 'y' => 1000);
+	$graph =  array ('x' => 1000, 'y' => 700);
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 
 echo "\n	</body>
