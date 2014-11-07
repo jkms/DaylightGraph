@@ -43,40 +43,38 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		var context = canvas.getContext('2d');";
 		
 	//Grid
+		//Vertical
 		for ($i=1; $i<12; $i++) {
 			$coord[1000]['x'][0][] = ($i/12) * $graph['x'];
 			$coord[1000]['y'][0][] = $graph['x'] * 0;
 			$coord[1000]['x'][1][] = ($i/12) * $graph['x'];
 			$coord[1000]['y'][1][] = $graph['x'] * 1;
 		}
-
 		for ($i=0; $i<11; $i++) {
 			echo "\n		context.beginPath();
 			context.moveTo(".$coord[1000]['x'][0][$i].", ".$coord[1000]['y'][0][$i].");
 			context.lineTo(".$coord[1000]['x'][1][$i].", ".$coord[1000]['y'][1][$i].");
 			context.lineWidth = 1;
-			context.strokeStyle = 'green';
+			context.strokeStyle = 'gray';
 			context.stroke();";
 		}
-	/*
-	for ($i=1; $i<12; $i++) {
-		echo "\n		context.beginPath();
-		context.moveTo(".($i / 12) * graph['x'].", ".graph['y'] * 0 .");
-		context.lineTo(".($i / 12) * graph['x'].", ".graph['y'] * 1 .");
-		context.lineWidth = 1;
-		context.strokeStyle = 'gray';
-		context.stroke();";
-	}
-	
-	for ($i=1; $i<24; $i++) {
-		echo "\n		context.beginPath();
-		context.moveTo(".graph['x'] * 0 .", ".($i / 24) * graph['y'].");
-		context.lineTo(".graph['x'] * 1 .", ".($i / 24) * graph['y'].");
-		context.lineWidth = 1;
-		context.strokeStyle = 'gray';
-		context.stroke();";
-	}
-	*/
+		
+		//Horizontal
+		for ($i=1; $i<12; $i++) {
+			$coord[1001]['x'][0][] = $graph['x'] * 0;
+			$coord[1001]['y'][0][] = ($i/24) * $graph['y'];
+			$coord[1001]['x'][1][] = $graph['x'] * 1;
+			$coord[1001]['y'][1][] = ($i/24) * $graph['y'];
+		}
+		for ($i=0; $i<11; $i++) {
+			echo "\n		context.beginPath();
+			context.moveTo(".$coord[1001]['x'][0][$i].", ".$coord[1001]['y'][0][$i].");
+			context.lineTo(".$coord[1001]['x'][1][$i].", ".$coord[1001]['y'][1][$i].");
+			context.lineWidth = 1;
+			context.strokeStyle = 'gray';
+			context.stroke();";
+		}
+
 	$secondsinday = 24*60*60;
 	//Line 1
 	$width=count($line1);
