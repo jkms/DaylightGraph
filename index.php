@@ -39,8 +39,8 @@ $finish = 366 - date('z');
 		$sunsetarray[]=$SSdata;
 	}
 	
-	$startwork = converttoseconds("09:00");
-	$gohome = converttoseconds("17:30");
+	$startwork = converttoseconds("08:00");
+	$gohome = converttoseconds("18:30");
 
 function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
 	$secondsinday = 24*60*60;
