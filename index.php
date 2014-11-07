@@ -10,6 +10,12 @@ $TZOffset=-8;
 
 $secondsinday = 24*60*60;
 
+		$secondstoday = date("H:i");
+		$nowbar = converttoseconds($secondstoday);
+		
+		echo "$secondstoday\n";
+		echo "$nowbar\n";
+
 function converttoseconds($timevar) {
 	$timearray = explode(':',$timevar);
 	return $timearray[0]*60*60 + $timearray[1]*60;
