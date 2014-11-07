@@ -43,8 +43,6 @@ $finish = 366 - date('z');
 		$sunsetarray[]=$SSdata;
 	}
 	
-	$work_time = $_POST['work_time'];
-    $home_time= $_POST['home_time'];
 	if (isset($_POST['work_time'])){
 		$startwork = converttoseconds($_POST['work_time']);
 	} else {
@@ -53,7 +51,7 @@ $finish = 366 - date('z');
 	if (isset( $_POST['home_time'] )) {
 		$gohome = converttoseconds($_POST['home_time']);
 	} else {
-		$gohome = converttoseconds('5:30');
+		$gohome = converttoseconds('17:30');
 	}
 
 function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
