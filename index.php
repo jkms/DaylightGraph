@@ -3,6 +3,8 @@
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
+date_default_timezone_set('America/Vancouver');
+
 $Latitude=49;
 $Longitude=-123.1;
 $Zenith=90;
