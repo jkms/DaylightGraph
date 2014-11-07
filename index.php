@@ -73,7 +73,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.fillText('$datetext', ".$coord[1000]['z'][0][$i].", 0);";
 		}
 		$datetext = date('M', mktime (0,0,0,12));
-		echo "			context.font = '8pt Calibri';
+		echo "\n			context.font = '8pt Calibri';
 			context.textAlign = 'center';
 			context.textBaseline = 'top';
 			context.fillText('$datetext', ".$coord[1000]['z'][0][11].", 0);";
@@ -213,10 +213,10 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.textAlign = 'left';
 			context.fillStyle = 'green';
 			context.textBaseline = 'bottom';
-			context.fillText('$nowtext', ".$coord[1002]['x'][0][$i].", ".$coord[1003]['y'][0][$i].");";
+			context.fillText('$nowtext', ".$coord[1002]['x'][0].", ".$coord[1003]['y'][0].");";
 	  
 		
-echo "		</script>\n";
+echo "\n		</script>\n";
 } 
 
 echo "<!DOCTYPE HTML>
