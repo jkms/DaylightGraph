@@ -248,7 +248,7 @@ echo "<!DOCTYPE HTML>
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 	
 echo "\n
-<form>
+<form action=\"index.php\" method=\"post\">
 	When do you go to work:
 	<input type=\"time\" name=\"work_time\" value=\"09:00\">
 	When do you go home:
