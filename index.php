@@ -33,7 +33,7 @@ $finish = 365 - date('z');
 			'day' => $i,
 			'seconds' => converttoseconds($sunrise)
 		);
-		echo "Day: ".$i." Sunrise: ".$sunrise."|".end($SRdata['seconds'])." Sunset: ".$sunset."|".end($SSdata['seconds'])."<br>\n";		
+//		echo "Day: ".$i." Sunrise: ".$sunrise."|".end($SRdata['seconds'])." Sunset: ".$sunset."|".end($SSdata['seconds'])."<br>\n";		
 		$sunrisearray[]=$SRdata;
 		$sunsetarray[]=$SSdata;
 	}
