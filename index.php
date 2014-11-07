@@ -187,6 +187,11 @@ echo "<!DOCTYPE HTML>
 	$graph =  array ('x' => 1000, 'y' => 700);
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 
+	echo "<h1>SunRise</h1>\n";
+	print_r($sunrisearray);
+	echo "<h1>SunSet</h1>\n";
+	print_r($sunsetarray);
+	
 echo "\n	</body>
 </html>";
 ?>
