@@ -17,7 +17,7 @@ function converttoseconds($timevar) {
 	return $timearray[0]*60*60 + $timearray[1]*60;
 }
 $start = date('z') * -1;
-$finish = 370 - date('z');
+$finish = 500 - date('z');
 
 	for ($i=$start; $i<=$finish; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
@@ -93,7 +93,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.lineWidth = 1;
 			context.strokeStyle = 'green';
 			context.stroke();";
-		
+
 		$secondstoday = date("H:i");
 		$nowbar = converttoseconds($secondstoday);
 		$coord[1003]['x'][0] = $graph['x'] * 0;
@@ -117,7 +117,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	echo "
 		context.beginPath();
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
-	
+
 	for ($i=1; $i<$width; $i++) {
 		echo "\n		context.lineTo(".$coord[0]['x'][$i].", ".$coord[0]['y'][$i].");";
 	}
@@ -126,7 +126,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.strokeStyle = '$color1';
 		context.stroke();";
 	//Line 32
-	
+
 	$width=count($line2);
 	for ($i=0; $i<$width; $i++) {
 		$coord[1]['x'][] = ($i * ($graph['x'] / $width));
@@ -136,7 +136,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	echo "
 		context.beginPath();
 		context.moveTo(".$coord[1]['x'][0].", ".$coord[1]['y'][0].");";
-	
+
 	for ($i=1; $i<$width; $i++) {
 		echo "\n		context.lineTo(".$coord[1]['x'][$i].", ".$coord[1]['y'][$i].");";
 	}
