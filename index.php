@@ -114,7 +114,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		$coord[0]['y'][] = ($line1[$i]['seconds'] / $secondsinday) * $graph['y'];
 	}
 	$coord[0]['x'][] = $graph['x'];
-	$coord[0]['y'][] = ($line1[$width+1]['seconds'] / $secondsinday) * $graph['y'];
+	$coord[0]['y'][] = ($line1[$width]['seconds'] / $secondsinday) * $graph['y'];
 	echo "
 		context.beginPath();
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
