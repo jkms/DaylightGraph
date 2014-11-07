@@ -109,7 +109,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	//Line 1
 	$width=count($line1);
 	for ($i=0; $i<$width; $i++) {
-		$coord[0]['x'][] = (($line1[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
+		$coord[0]['x'][] = ($i * ($graph['x'] / $width));
 		$coord[0]['y'][] = $graph['y'] - (($line1[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 
@@ -128,7 +128,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	
 	$width=count($line2);
 	for ($i=0; $i<$width; $i++) {
-		$coord[1]['x'][] = (($line2[$i]['day'] * ($graph['x'] / $width)) + ($graph['x'] / 2));
+		$coord[1]['x'][] = ($i * ($graph['x'] / $width));
 		$coord[1]['y'][] = $graph['y'] - (($line2[$i]['seconds'] / $secondsinday) * $graph['y']);
 	}
 
