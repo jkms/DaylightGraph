@@ -211,7 +211,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.stroke();
 			context.font = '8pt Calibri';
 			context.textAlign = 'left';
-			context.fillStyle = 'green';
+			context.fillStyle = 'black';
 			context.textBaseline = 'bottom';
 			context.fillText('$nowtext', ".$coord[1002]['x'][0].", ".$coord[1003]['y'][0].");";
 	  
