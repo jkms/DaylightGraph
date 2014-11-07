@@ -36,6 +36,7 @@ function converttoseconds($timevar) {
 	$gohome = converttoseconds("17:30");
 
 function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
+	$secondsinday = 24*60*60;
 	echo "
     <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\" style=\"border:1px solid #000000;\"></canvas>
 		<script>
@@ -100,7 +101,6 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'green';
 			context.stroke();";
 
-	$secondsinday = 24*60*60;
 	//Line 1
 	$width=count($line1);
 	for ($i=0; $i<$width; $i++) {
