@@ -22,8 +22,7 @@ function converttoseconds($timevar) {
 	$timearray = explode(':',$timevar);
 	return $timearray[0]*60*60 + $timearray[1]*60;
 }
-
-	for ($i=-183; $i<=182; $i++) {
+	for ($i=date('z') * -1; $i<=365 - date('z'); $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
 		//echo date("D M d Y"). ', sunrise time for '. date("M d, Y", $dayofyear) .': ' .date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
 		$sunrise = date_sunrise($dayofyear, SUNFUNCS_RET_STRING, $Latitude, $Longitude, $Zenith, $TZOffset);
