@@ -74,6 +74,19 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'gray';
 			context.stroke();";
 		}
+		
+		//Stupid shit for mark
+		$coord[1002]['x'][0] = $graph['x'] / 2;
+		$coord[1002]['y'][0] = $graph['0'] * 0;
+		$coord[1002]['x'][1] = $graph['x'] / 2;
+		$coord[1002]['y'][1] = $graph['0'] * 1;
+		echo "\n		context.beginPath();
+			context.moveTo(".$coord[1002]['x'][0][$i].", ".$coord[1002]['y'][0][$i].");
+			context.lineTo(".$coord[1002]['x'][1][$i].", ".$coord[1002]['y'][1][$i].");
+			context.lineWidth = 1;
+			context.strokeStyle = 'green';
+			context.stroke();";
+		}
 
 	$secondsinday = 24*60*60;
 	//Line 1
