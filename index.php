@@ -60,13 +60,13 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		}
 		
 		//Horizontal
-		for ($i=1; $i<12; $i++) {
+		for ($i=1; $i<24; $i++) {
 			$coord[1001]['x'][0][] = $graph['x'] * 0;
 			$coord[1001]['y'][0][] = ($i/24) * $graph['y'];
 			$coord[1001]['x'][1][] = $graph['x'] * 1;
 			$coord[1001]['y'][1][] = ($i/24) * $graph['y'];
 		}
-		for ($i=0; $i<11; $i++) {
+		for ($i=0; $i<23; $i++) {
 			echo "\n		context.beginPath();
 			context.moveTo(".$coord[1001]['x'][0][$i].", ".$coord[1001]['y'][0][$i].");
 			context.lineTo(".$coord[1001]['x'][1][$i].", ".$coord[1001]['y'][1][$i].");
