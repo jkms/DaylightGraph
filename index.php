@@ -52,7 +52,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		
 	//Grid
 		//Vertical
-		for ($i=1; $i<12; $i++) {
+		for ($i=1; $i<=12; $i++) {
 			$coord[1000]['x'][0][] = ($i/12) * $graph['x'];
 			$coord[1000]['y'][0][] = $graph['x'] * 0;
 			$coord[1000]['z'][0][] = (($i/12) * $graph['x']) - ($graph['x']/24);
@@ -68,9 +68,15 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'gray';
 			context.stroke();
 			context.font = '8pt Calibri';
+			context.textAlign = 'center';
 			context.textBaseline = 'top';
 			context.fillText('$datetext', ".$coord[1000]['z'][0][$i].", 0);";
 		}
+		$datetext = date('M', mktime (0,0,0,12));
+		echo "			context.font = '8pt Calibri';
+			context.textAlign = 'center';
+			context.textBaseline = 'top';
+			context.fillText('$datetext', ".$coord[1000]['z'][0][12].", 0);";
 		
 		//Horizontal
 		for ($i=1; $i<24; $i++) {
