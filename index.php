@@ -67,7 +67,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'gray';
 			context.stroke();
 			context.font = '8pt Calibri';
-			context.textBaseline = 'middle';
+			context.textBaseline = 'top';
 			context.fillText('$datetext', ".$coord[1000]['x'][0][$i].", 0);";
 		}
 		
