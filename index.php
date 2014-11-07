@@ -123,7 +123,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
         $coord[0]['y'][] = $coord[0]['y'][0];
 
 
-	echo "/n		context.beginPath();
+	echo "\n		context.beginPath();
 		context.moveTo(".$coord[0]['x'][0].", ".$coord[0]['y'][0].");";
 	$width += 3;
 	for ($i=1; $i<=$width; $i++) {
