@@ -87,7 +87,8 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 			context.strokeStyle = 'green';
 			context.stroke();";
 		
-		$nowbar = converttoseconds(date("H:i"));
+		$secondstoday = date("H:i");
+		$nowbar = converttoseconds($secondstoday);
 		$coord[1003]['x'][0] = $graph['x'] * 0;
 		$coord[1003]['y'][0] = $graph['y'] * $nowbar / $secondsinday;
 		$coord[1003]['x'][1] = $graph['x'] * 1;
