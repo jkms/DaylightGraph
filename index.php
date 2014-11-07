@@ -17,7 +17,7 @@ function converttoseconds($timevar) {
 	return $timearray[0]*60*60 + $timearray[1]*60;
 }
 $start = date('z') * -1;
-$finish = 500 - date('z');
+$finish = 365 - date('z');
 
 	for ($i=$start; $i<=$finish; $i++) {
 		$dayofyear = time() + ($i * $secondsinday);
@@ -111,7 +111,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	$width=count($line1);
 	for ($i=0; $i<$width; $i++) {
 		$coord[0]['x'][] = ($i * ($graph['x'] / $width));
-		$coord[0]['y'][] = $graph['y'] - (($line1[$i]['seconds'] / $secondsinday) * $graph['y']);
+		$coord[0]['y'][] = ($line1[$i]['seconds'] / $secondsinday) * $graph['y'];
 	}
 
 	echo "
@@ -130,7 +130,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	$width=count($line2);
 	for ($i=0; $i<$width; $i++) {
 		$coord[1]['x'][] = ($i * ($graph['x'] / $width));
-		$coord[1]['y'][] = $graph['y'] - (($line2[$i]['seconds'] / $secondsinday) * $graph['y']);
+		$coord[1]['y'][] = ($line2[$i]['seconds'] / $secondsinday) * $graph['y'];
 	}
 
 	echo "
