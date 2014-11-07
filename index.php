@@ -162,7 +162,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 
 		context.closePath();
 		context.globalAlpha = 0.5;
-		context.lineWidth = 1;
+		context.lineWidth = 2;
 		context.fillStyle = '$color3';
 		context.fill();
 		context.strokeStyle = '$color3';
