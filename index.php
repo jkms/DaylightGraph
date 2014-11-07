@@ -45,9 +45,9 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 	//Grid
 		//Vertical
 		for ($i=1; $i<12; $i++) {
-			$coord[1000]['x'][0][] = ($i/12) * $graph['x'];
+			$coord[1000]['x'][0][] = (($i/12) * $graph['x']) - (((date('j') / (365/12)) * (1/12)) * $graph['x']);
 			$coord[1000]['y'][0][] = $graph['x'] * 0;
-			$coord[1000]['x'][1][] = ($i/12) * $graph['x'];
+			$coord[1000]['x'][1][] = (($i/12) * $graph['x']) - (((date('j') / (365/12)) * (1/12)) * $graph['x']);
 			$coord[1000]['y'][1][] = $graph['x'] * 1;
 		}
 		for ($i=0; $i<11; $i++) {
