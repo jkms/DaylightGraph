@@ -189,7 +189,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		$coord[1002]['y'][0] = $graph['y'] * 0;
 		$coord[1002]['x'][1] = $graph['x'] * (date('z') / 365);
 		$coord[1002]['y'][1] = $graph['y'] * 1;
-		$nowtext = date('D, d M Y H:i:s')
+		$nowtext = date('D, d M Y H:i:s');
 		echo "\n		context.beginPath();
 			context.moveTo(".$coord[1002]['x'][0].", ".$coord[1002]['y'][0].");
 			context.lineTo(".$coord[1002]['x'][1].", ".$coord[1002]['y'][1].");
