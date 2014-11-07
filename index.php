@@ -130,7 +130,7 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		echo "\n		context.lineTo(".$coord[0]['x'][$i].", ".$coord[0]['y'][$i].");";
 	}
 	echo "\n		context.closepath();
-//		context.lineJoin = 'round';
+		context.lineJoin = 'round';
 		context.lineWidth = 2;
 		context.fillStyle = '#8ED6FF';
 		context.strokeStyle = '$color1';
