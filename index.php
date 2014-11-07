@@ -43,8 +43,18 @@ $finish = 366 - date('z');
 		$sunsetarray[]=$SSdata;
 	}
 	
-	$startwork = converttoseconds("08:00");
-	$gohome = converttoseconds("18:30");
+	$work_time = $_POST['work_time'];
+    $home_time= $_POST['home_time'];
+	if (isset($_POST['work_time'])){
+		$startwork = converttoseconds($_POST['work_time']);
+	} else {
+		$startwork = converttoseconds('9:00');
+	}
+	if (isset( $_POST['home_time'] )) {
+		$gohome = converttoseconds($_POST['home_time']);
+	} else {
+		$gohome = converttoseconds('5:30');
+	}
 
 function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
 	$secondsinday = 24*60*60;
@@ -240,15 +250,12 @@ echo "<!DOCTYPE HTML>
 	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
 	
 echo "\n
- <form>
-  When do you go to work:
-  <input type=\"time\" name=\"work_time\" value=\"09:00\">
-</form>
- <form>
-  When do you go home:
-  <input type=\"time\" name=\"home_time\" value=\"17:30\">
-</form>
 
+	When do you go to work:
+	<input type=\"time\" name=\"work_time\" value=\"09:00\">
+	When do you go home:
+	<input type=\"time\" name=\"home_time\" value=\"17:30\">
+	<input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Submit\">
 	</body>
 </html>";
 
