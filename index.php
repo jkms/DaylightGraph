@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 
 date_default_timezone_set('America/Vancouver');
 
-$Latitude=49;
-$Longitude=-123.1;
+$Latitude=49.8;
+$Longitude=-119.4;
 $Zenith=90;
 $TZOffset=-8;
 
