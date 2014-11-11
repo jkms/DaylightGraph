@@ -32,8 +32,8 @@ function loadRunKeeper ($file) {
 $filename = "Data/johnrun/2014-01-01-0951.gpx";
 
     echo "<h1>$filename</h1>\n";
-    $gpx = loadRunKeeper($filename);
-    print_r($gpx);
+    $trkseg = loadRunKeeper($filename);
+    print_r($trkseg);
 //}
 
 $start = date('z') * -1;
