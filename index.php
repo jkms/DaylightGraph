@@ -29,9 +29,10 @@ function loadRunKeeper ($file) {
 }
 
 foreach (glob($runpath."*.gpx") as $filename) {
-    $gpx[] = loadRunKeeper($filename);
+    echo "$filename<br>\n";
+    $gpx = loadRunKeeper($filename);
+    print_r($gpx);
 }
-print_r($gpx);
 
 $start = date('z') * -1;
 $finish = 366 - date('z');
