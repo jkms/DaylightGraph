@@ -20,6 +20,18 @@ function converttoseconds($timevar) {
 	$timearray = explode(':',$timevar);
 	return $timearray[0]*60*60 + $timearray[1]*60;
 }
+
+$runpath = "Data/johnrun/";
+
+function loadRunKeeper ($file) {
+	$xml=simplexml_load_file($file) or die("Error: Cannot create object");
+	return $xml;w
+}
+
+foreach (glob("$runpath/*.txt") as $filename) {
+    echo "$filename size " . filesize($filename) . "\n";
+}
+
 $start = date('z') * -1;
 $finish = 366 - date('z');
 
