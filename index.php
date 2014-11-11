@@ -25,7 +25,7 @@ $runpath = "Data/johnrun/";
 
 function loadRunKeeper ($file) {
 	$xml=simplexml_load_file($file) or die("Error: Cannot create object");
-	return $xml;w
+	return $xml;
 }
 
 foreach (glob("$runpath/*.txt") as $filename) {
