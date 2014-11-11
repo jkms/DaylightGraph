@@ -37,7 +37,7 @@ $filename = "Data/johnrun/2014-01-01-0951.gpx";
 	for ($i=0; $i<$j; $i+=($j-1)) {
 		$output = $gpx->trk->trkseg->trkpt[$i]->time;
 		$outputdate = date('D, d M Y H:i:s', $output);
-		echo "$outputdate<br>\n";
+		echo "output: $output<br>\noutputdate: $outputdate<br>\n";
 	}
 //}
 
