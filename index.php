@@ -28,8 +28,8 @@ function loadRunKeeper ($file) {
 	return $xml;
 }
 
-//foreach (glob($runpath."*.gpx") as $filename) {
-$filename = "Data/johnrun/2014-01-01-0951.gpx";
+foreach (glob($runpath."*.gpx") as $filename) {
+//$filename = "Data/johnrun/2014-01-01-0951.gpx";
 
     echo "<h1>$filename</h1>\n";
 	    $gpx = loadRunKeeper($filename);
@@ -42,9 +42,9 @@ $filename = "Data/johnrun/2014-01-01-0951.gpx";
 		$outputtime = explode(":", $output[1]);
 		
 		$outputtd = date('D, d M Y H:i:s', mktime($outputtime[0],$outputtime[1],$outputtime[2],$outputdate[1],$outputdate[2],$outputdate[0]));
-		echo "output: $output<br>\noutputdate: $outputtd<br>\n";
+		echo "outputdate: $outputtd<br>\n";
 	}
-//}
+}
 
 $start = date('z') * -1;
 $finish = 366 - date('z');
