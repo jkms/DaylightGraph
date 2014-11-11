@@ -35,7 +35,8 @@ $filename = "Data/johnrun/2014-01-01-0951.gpx";
 	    $gpx = loadRunKeeper($filename);
 	$j = count($gpx->trk->trkseg->trkpt);
 	for ($i=0; $i<$j; $i++) {
-		print_r($gpx->trk->trkseg->trkpt[$i]->time);
+		$output = $gpx->trk->trkseg->trkpt[$i]->time;
+		echo "$output<br>\n";
 	}
 //}
 
