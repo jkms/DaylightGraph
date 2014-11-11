@@ -28,7 +28,7 @@ function loadRunKeeper ($file) {
 	return $xml;
 }
 
-foreach (glob("$runpath/*.txt") as $filename) {
+foreach (glob($runpath."*.gpx") as $filename) {
     echo "$filename size " . filesize($filename) . "\n";
 }
 
