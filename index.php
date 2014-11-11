@@ -31,7 +31,7 @@ function loadRunKeeper ($file) {
 foreach (glob($runpath."*.gpx") as $filename) {
     echo "<h1>$filename</h1>\n";
     $gpx = loadRunKeeper($filename);
-    print_r($gpx);
+    print_r($gpx['trk']);
 }
 
 $start = date('z') * -1;
