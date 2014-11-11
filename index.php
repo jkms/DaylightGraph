@@ -36,8 +36,13 @@ $filename = "Data/johnrun/2014-01-01-0951.gpx";
 	$j = count($gpx->trk->trkseg->trkpt);
 	for ($i=0; $i<$j; $i+=($j-1)) {
 		$output = $gpx->trk->trkseg->trkpt[$i]->time;
-		$outputdate = date('D, d M Y H:i:s', $output);
-		echo "output: $output<br>\noutputdate: $outputdate<br>\n";
+		$output = rtrim($output, 'Z');
+		$output = explode("T", $output);
+		$outputdate = explode("-", $output[0]);
+		$outputtime = explode(":", $output[1]);
+		
+		$outputtd = date('D, d M Y H:i:s', mktime($outputtime[0],$outputtime[1],$outputtime[2],$outputdate[1],$outputdate[2],$outputdate[0]));
+		echo "output: $output<br>\noutputdate: $outputtd<br>\n";
 	}
 //}
 
