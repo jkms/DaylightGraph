@@ -210,12 +210,13 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.fill();
 		context.strokeStyle = '$color2';
 		context.stroke();";
-
+		
+	//Running Stuff
 	$j=count($runduration);
 	for ($i=0; $i<$j; $i++) {
 		$coord[10]['x'] = ((date('z', $runduration[$i][0])/365)*$graph['x']);
 		$coord[10]['y'][0] = (((date('H', $runduration[$i][0]) * 60 * 60 ) + (date('i', $runduration[$i][0]) * 60))/86400)*$graph['y'];
-		$coord[10]['y'][1] = (((date('H', $runduration[$i][0]) * 60 * 60 ) + (date('i', $runduration[$i][1]) * 60))/86400)*$graph['y'];
+		$coord[10]['y'][1] = (((date('H', $runduration[$i][1]) * 60 * 60 ) + (date('i', $runduration[$i][1]) * 60))/86400)*$graph['y'];
 		echo " \n		context.beginPath();
 		context.moveTo(".$coord[10]['x']." ,".$coord[10]['y'][0].");
 		context.lineTo(".$coord[10]['x'].", ".$coord[10]['y'][1].");
