@@ -44,11 +44,12 @@ function loadRunKeeper($file) {
 	
 		$temptd[1] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
 		$temptd[1] += $TZOffset;
+		echo "Start time: ".date('H:i:s', $temptd[0])." End Time: ".date('H:i:s', $temptd[1]);
 	return $temptd;
 }
 
 foreach (glob($runpath."*.gpx") as $filename) {
-//	echo "<h1>$filename</h1>\n";
+	echo "<h1>$filename</h1>\n";
 	$runduration[] = loadRunKeeper($filename);
 //	echo "start: ".$runduration[0]." end: ".$runduration[1]."<br>\n";
 }
