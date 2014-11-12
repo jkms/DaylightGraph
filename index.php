@@ -33,9 +33,9 @@ function loadRunKeeper($file) {
 		$tempdate = explode("-", $temp[0]);
 		$temptime = explode(":", $temp[1]);
 	
-		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+		$temptd[$i][] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
 	}
-	return $temptd;
+	return $temptd[$i];
 }
 
 foreach (glob($runpath."*.gpx") as $filename) {
