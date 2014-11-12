@@ -32,8 +32,10 @@ function loadRunKeeper($file) {
 		$temp = explode("T", $temp);
 		$tempdate = explode("-", $temp[0]);
 		$temptime = explode(":", $temp[1]);
-		
-		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+	
+		$temptd[$i] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+		$TZOffset=-8+date('I', $temptd[$i]);
+		$temptd[$i] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1]+$TZOffset,$tempdate[2],$tempdate[0]);
 	}
 	return $temptd;
 }
