@@ -40,8 +40,8 @@ function loadRunKeeper($file) {
 
 foreach (glob($runpath."*.gpx") as $filename) {
 	echo "<h1>$filename</h1>\n";
-	$runduration = loadRunKeeper($filename);
-	echo "start: ".$runduration[0]." end: ".$runduration[1]."<br>\n";
+	$runduration[] = loadRunKeeper($filename);
+//	echo "start: ".$runduration[0]." end: ".$runduration[1]."<br>\n";
 }
 
 $start = date('z') * -1;
@@ -82,7 +82,7 @@ $finish = 366 - date('z');
 		$gohomeformvalue = '17:30';
 	}
 
-function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph) {
+function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $color4, $graph, $runduration) {
 	$secondsinday = 24*60*60;
 	echo "
     <canvas id=\"myCanvas\" width=\"".$graph['x']."\" height=\"".$graph['y']."\" style=\"border:1px solid #000000;\"></canvas>
@@ -201,6 +201,18 @@ function DrawGraph($line1, $color1, $line2, $color2, $line3, $color3, $line4, $c
 		context.strokeStyle = '$color2';
 		context.stroke();";
 
+	$j=count($runduration);
+	for ($i=0, $i<$j, $i++) {
+		$coord[10]['x'] = ((date('z', $runduration[$i][0])/365)*$graph['x']);
+		$coord[10]['y'][0] = (((date('H', $runduration[$i][0]) * 60 * 60 ) + (date('i', $runduration[$i][0]) * 60))/86400)*$graph['y'];
+		$coord[10]['y'][1] = (((date('H', $runduration[$i][0]) * 60 * 60 ) + (date('i', $runduration[$i][1]) * 60))/86400)*$graph['y'];
+		echo " \n		context.beginPath();
+		context.moveTo(".$coord[10]['x']." ,".$coord[10]['y'][0].");
+		context.lineTo(".$coord[10]['x'].", ".$coord[10]['y'][1].");
+		context.stroke();
+";
+	}
+
 	//Work block
 	$coord[2]['x'][0] = 0;
 	$coord[2]['y'][0] = ($line3 / $secondsinday) * $graph['y'];
@@ -273,7 +285,7 @@ echo "<!DOCTYPE HTML>
 	<body>";
 	
 	$graph =  array ('x' => 1000, 'y' => 700);
-	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph);
+	DrawGraph($sunrisearray, "blue", $sunsetarray, "red", $startwork, "black", $gohome, "black", $graph, $runduration);
 	
 echo "\n
 <form action=\"index.php\" method=\"post\">
