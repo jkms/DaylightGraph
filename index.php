@@ -35,7 +35,7 @@ function loadRunKeeper($file) {
 	
 		$temptime = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
 		$TZOffset=-8+date('I', $temptime);
-		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1]+$TZOffset,$tempdate[2],$tempdate[0]);
+		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
 	}
 	return $temptd;
 }
