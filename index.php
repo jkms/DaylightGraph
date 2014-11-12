@@ -25,17 +25,25 @@ $runpath = "Data/johnrun/";
 
 function loadRunKeeper($file) {
 	$xml=simplexml_load_file($file) or die("Error: Cannot create object");
-	$j = count($xml->trk->trkseg->trkpt);
-	for ($i=0; $i<$j; $i+=($j-1)) {
-		$temp = $xml->trk->trkseg->trkpt[$i]->time;
+	$j = count($xml->trk->trkseg->trkpt)-1;
+		$temp = $xml->trk->trkseg->trkpt[0]->time;
 		$temp = rtrim($temp, 'Z');
 		$temp = explode("T", $temp);
 		$tempdate = explode("-", $temp[0]);
 		$temptime = explode(":", $temp[1]);
 	
-		$temptd[$i][] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
-	}
-	return $temptd[$i];
+		$temptd[0] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+
+
+		$temp = $xml->trk->trkseg->trkpt[$j]->time;
+		$temp = rtrim($temp, 'Z');
+		$temp = explode("T", $temp);
+		$tempdate = explode("-", $temp[0]);
+		$temptime = explode(":", $temp[1]);
+	
+		$temptd[1] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+		}
+	return $temptd;
 }
 
 foreach (glob($runpath."*.gpx") as $filename) {
