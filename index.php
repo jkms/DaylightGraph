@@ -42,7 +42,6 @@ function loadRunKeeper($file) {
 		$temptime = explode(":", $temp[1]);
 	
 		$temptd[1] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
-		}
 	return $temptd;
 }
 
