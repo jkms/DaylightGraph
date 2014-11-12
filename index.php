@@ -23,27 +23,25 @@ function converttoseconds($timevar) {
 
 $runpath = "Data/johnrun/";
 
-function loadRunKeeper ($file) {
+function loadRunKeeper($file) {
 	$xml=simplexml_load_file($file) or die("Error: Cannot create object");
-	return $xml;
+	$j = count($xml->trk->trkseg->trkpt);
+	for ($i=0; $i<$j; $i+=($j-1)) {
+		$temp = $xml->trk->trkseg->trkpt[$i]->time;
+		$temp = rtrim($temp, 'Z');
+		$temp = explode("T", $temp);
+		$tempdate = explode("-", $temp[0]);
+		$temptime = explode(":", $temp[1]);
+		
+		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
+	}
+	return $temptd;
 }
 
 foreach (glob($runpath."*.gpx") as $filename) {
-//$filename = "Data/johnrun/2014-01-01-0951.gpx";
-
-    echo "<h1>$filename</h1>\n";
-	    $gpx = loadRunKeeper($filename);
-	$j = count($gpx->trk->trkseg->trkpt);
-	for ($i=0; $i<$j; $i+=($j-1)) {
-		$output = $gpx->trk->trkseg->trkpt[$i]->time;
-		$output = rtrim($output, 'Z');
-		$output = explode("T", $output);
-		$outputdate = explode("-", $output[0]);
-		$outputtime = explode(":", $output[1]);
-		
-		$outputtd = date('D, d M Y H:i:s', mktime($outputtime[0],$outputtime[1],$outputtime[2],$outputdate[1],$outputdate[2],$outputdate[0]));
-		echo "outputdate: $outputtd<br>\n";
-	}
+	echo "<h1>$filename</h1>\n";
+	$runduration = loadRunKeeper($filename);
+	echo "start: $runduration\[0\] end: $runduration\[1\]<br>\n";
 }
 
 $start = date('z') * -1;
