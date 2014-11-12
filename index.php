@@ -33,8 +33,6 @@ function loadRunKeeper($file) {
 		$tempdate = explode("-", $temp[0]);
 		$temptime = explode(":", $temp[1]);
 	
-		$temptime = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
-		$TZOffset=-8+date('I', $temptime);
 		$temptd[] = mktime($temptime[0],$temptime[1],$temptime[2],$tempdate[1],$tempdate[2],$tempdate[0]);
 	}
 	return $temptd;
@@ -43,7 +41,7 @@ function loadRunKeeper($file) {
 foreach (glob($runpath."*.gpx") as $filename) {
 	echo "<h1>$filename</h1>\n";
 	$runduration[] = loadRunKeeper($filename);
-	echo "start: ".date('D, d M Y', $runduration[0])." end: ".date('H:i:s', $runduration[1])."<br>\n";
+	echo "start: ".$runduration[0]." end: ".$runduration[1]."<br>\n";
 }
 
 $start = date('z') * -1;
